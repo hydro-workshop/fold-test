@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A quiet browser puzzle about folding tracing paper to match a target.">
+  <meta name="color-scheme" content="light">
+  <title>Fold Test</title>
+  <link rel="icon" href="./fold.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+<main class="studio">
+  <header class="mast">
+    <div class="studio-name"><img src="./fold.svg" alt="" width="34" height="34"> HYDRO WORKSHOP</div>
+    <span class="quiet">PAPER PUZZLE</span>
+  </header>
+  <section class="intro">
+    <p class="eyebrow">A little exercise in spatial thinking</p>
+    <h1>Fold Test<span>.</span></h1>
+    <p class="lede">Fold a sheet of tracing paper until its shape and ink match the target.</p>
+  </section>
+  <section class="game" aria-label="Paper folding puzzle">
+    <div class="game-head">
+      <div><p class="eyebrow" id="progress"></p><h2 id="level-name"></h2></div>
+      <nav id="levels" aria-label="Choose puzzle"></nav>
+    </div>
+    <div class="workbench">
+      <section class="tray">
+        <h3>Your sheet <span id="sheet-size"></span></h3>
+        <div class="board-space"><div id="paper" class="board" role="img"></div></div>
+      </section>
+      <section class="tray target">
+        <h3>Target <span id="target-size"></span></h3>
+        <div class="board-space"><div id="goal" class="board" role="img"></div></div>
+      </section>
+    </div>
+    <div class="controls">
+      <div class="pick"><span id="edge-label">Fold from</span><div class="buttons" id="edges" role="group" aria-labelledby="edge-label"></div></div>
+      <div class="pick"><span id="depth-label">Flap depth</span><div class="buttons" id="depths" role="group" aria-labelledby="depth-label"></div></div>
+      <button class="primary" id="apply" type="button">Make fold</button>
+    </div>
+    <div class="actions">
+      <div class="buttons">
+        <button id="undo" type="button">Undo</button>
+        <button id="reset" type="button">Reset</button>
+        <button id="hint" type="button">Hint</button>
+      </div>
+      <span id="fold-count"></span>
+    </div>
+    <p id="message" role="status" aria-live="polite"></p>
+  </section>
+  <details>
+    <summary>How to play</summary>
+    <p>Choose a side and how many rows or columns to fold in. The tinted area is your flap. It flips inward across the dashed crease. Ink on every layer stays visible.</p>
+    <p>Match the target’s size and the marks in each square. If you overshoot, undo or reset as often as you like. Every button works with touch or Tab and Enter. Your solved puzzles stay in this browser.</p>
+  </details>
+  <footer>No timer. No sound. Just paper.</footer>
+</main>
+</body>
+</html>
